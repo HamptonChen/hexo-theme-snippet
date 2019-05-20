@@ -244,6 +244,8 @@ pre {
   background: #fff url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
   background-repeat: repeat;
   overflow: hidden;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 .main-header .banneriframe {
   width: 100%;
@@ -296,11 +298,16 @@ pre {
 }
 /* main-navigation */
 .main-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   text-align: center;
   background: #fff;
-  border-top: 1px solid #ebebeb;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #e1e1e1;
+  /* border-top: 1px solid #ebebeb; */
+  /* margin-bottom: 20px; */
+  border-bottom: 1px solid #e1e1e1;
 }
 .main-navigation .navbar-collapse {
   border-top: 1px solid #ebebeb;
@@ -325,10 +332,11 @@ pre {
   position: relative;
 }
 .main-navigation .menu li a {
-  color: #505050;
-  line-height: 4em;
+  color: #000;
+  line-height: 3em;
   display: block;
   padding: 0 21px;
+  font-size: 20px;
 }
 .main-navigation .menu li:hover > a {
   color: #e67e22;
