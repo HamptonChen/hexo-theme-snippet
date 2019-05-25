@@ -257,6 +257,24 @@ pre {
   width: 100%;
   padding-top: 30px;
 }
+.main-header .main-header-box a.header-title h1 {
+  cursor: pointer;
+  font-family: 'Handlee',"华文行楷","Microsoft Yahei",arial,sans-serif;
+  font-weight: 100;
+  letter-spacing: 25px;
+  position: relative;
+  color: #fff;
+  font-size: 54px;
+  text-shadow: 0 0 1px rgba(94,255,216,0.8);
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  -o-transition: all .1s ease-out;
+  -ms-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
 .main-header .main-header-box a.header-avatar img {
   width: 82px;
   height: 82px;
@@ -270,7 +288,20 @@ pre {
   padding-top: 15px;
 }
 .main-header .main-header-box .branding h2 {
-  font-family: "STXingkai", "KaiTi", "Microsoft YaHei", "SimSun", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 0 0 1px rgba(94,255,216,0.8);
+  letter-spacing: 5px;
+  padding: 0px 0px 20px 0px;
+  z-index: 2;
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  -ms-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  font-family: 'Handlee',"verdana","Microsoft Yahei",arial,sans-serif;
+  /* font-family: "STXingkai", "KaiTi", "Microsoft YaHei", "SimSun", sans-serif;
   width: 320px;
   margin: 0 auto;
   letter-spacing: 3px;
@@ -282,7 +313,15 @@ pre {
   -webkit-text-fill-color: transparent!important;
   -webkit-background-clip: text!important;
   background-size: 200% 100%!important;
-  animation: masked-animation 2s infinite linear !important;
+  animation: masked-animation 2s infinite linear !important; */
+}
+.main-header .main-header-box .branding::before {
+  background-color: #fff;
+  content: "";
+  height: 2px;
+  display: block;
+  width: 650px;
+  margin: 10px auto;
 }
 .main-header .main-header-box .branding h2:hover {
   animation: masked-animation 1s infinite linear !important;
@@ -333,10 +372,11 @@ pre {
 }
 .main-navigation .menu li a {
   color: #000;
-  line-height: 3em;
+  line-height: 60px;
   display: block;
   padding: 0 21px;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 .main-navigation .menu li:hover > a {
   color: #e67e22;

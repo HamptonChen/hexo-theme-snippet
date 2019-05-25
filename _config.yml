@@ -117,11 +117,11 @@ links:
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding:
+branding: 记录分享前后端、大数据和人工智能等相关技术，微信公众号：程序员的修行之路
 
 ## 设置banner背景图片
 banner:
-    img: http://snippet.shenliyang.com/img/banner.jpg
+    img: img/banner.jpg
 
 ## 首页列表底部面板
 homePanel: true
@@ -224,6 +224,16 @@ uyan:
 visit_counter:
    site: false
    page: false
+
+leancloud_visitors:
+  enable: false
+  app_id: SB9F9qe7Kvgw8HDrbuyI2Knu-gzGzoHsz #<app_id>
+  app_key: vtbVDmSgALbCWCO0F8Lt8HC3 #<app_key>
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+  security: false
+  betterPerformance: false
 
 ## 网站访问统计分析
 
