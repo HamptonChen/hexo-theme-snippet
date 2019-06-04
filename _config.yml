@@ -255,6 +255,16 @@ baidu_site_verification:
 ### 百度自动推送
 baidu_push: false
 
+##备案信息
+### ICP备案
+icp_id: 
+
+### 公安备案
+gongan_beian:
+  enable: false
+  icon: 
+  id: 
+
 #网站主题配置
 since: 2019
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
