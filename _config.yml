@@ -38,6 +38,7 @@ carousel:
 widgets:
   - search
   - notification
+  - promo
   - social
   - category
   - archive
@@ -63,6 +64,12 @@ notification: |-
                 主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
                 支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
             </p>
+
+## 推广/广告位
+promo:
+      <p>
+        <a href="/" target="_blank"> <img src="/" alt></a> <br />
+      </p>
 
 ## 社交设置
 social:
@@ -162,6 +169,12 @@ reward:
   alipay: ''
   wepay: ''
   tip: 赞赏是不耍流氓的鼓励
+
+## 微信公众号
+wechat:
+  enable: true
+  title: 欢迎关注微信公众号
+  img: /img/gzh.jpg
 
 ## 主题评论
 

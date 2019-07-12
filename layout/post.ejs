@@ -23,6 +23,13 @@
     <div class="post-body post-content">
         <%- page.content %>
     </div>
+    <div class="wechat">
+        <% if(theme.wechat.enable){ %>
+            <hr />
+            <p> <%- theme.wechat.title %> </p>
+            <img class="wechat-image" src="<%- theme.wechat.img %>" />
+        <% } %>
+    </div>
     <% if(theme.reward.alipay || theme.reward.wepay){ %>
         <%- partial('_partial/reward') %>
     <% } %>
