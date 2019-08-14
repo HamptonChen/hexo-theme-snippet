@@ -529,7 +529,7 @@ pre {
 }
 .post .post-body {
   margin-top: 15px;
-  padding: 25px 0;
+  /* padding: 25px 0; */
   border-top: 1px solid #eee;
   overflow: hidden;
 }
@@ -612,7 +612,7 @@ pre {
   font-weight: 500;
 }
 .post-content > h1 {
-  margin-top: 0;
+  margin-top: 1em;
   font-size: 2em;
 }
 .post-content p {
@@ -1561,7 +1561,10 @@ pre .javascript .function {
    微信公众号
 ==========================================*/
 .wechat {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .wechat .wechat-image {
   width: 200px;
