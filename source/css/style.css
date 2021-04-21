@@ -232,6 +232,34 @@ pre {
 .carousel img {
   width: 100%;
 }
+.swipe-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+.swipe-box .swipe-pre-icon {
+  width: 3em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-2em);
+  background-color: rgba(48, 49, 51, 0.7);
+}
+.swipe-box .swipe-next-icon {
+  width: 3em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-2em);
+  background-color: rgba(48, 49, 51, 0.7);
+}
 /*====================================================
     header
 ====================================================*/
@@ -241,9 +269,11 @@ pre {
   line-height: 0;
   height: 180px;
   width: 100%;
-  background: #fff url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
+  background: #fff;
   background-repeat: repeat;
   overflow: hidden;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 .main-header .banneriframe {
   width: 100%;
@@ -264,6 +294,16 @@ pre {
 .main-header .main-header-box a.header-avatar:hover {
   text-decoration: none;
 }
+.main-header .main-header-box a.header-title {
+  text-decoration: none;
+}
+.main-header .main-header-box .header-title h1 {
+  font-family: "STXingkai", "KaiTi", "Microsoft YaHei", "SimSun", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 3em;
+  letter-spacing: 20px;
+}
 .main-header .main-header-box .branding {
   padding-top: 15px;
 }
@@ -272,15 +312,10 @@ pre {
   width: 320px;
   margin: 0 auto;
   letter-spacing: 3px;
-  color: #e67e22;
+  color: #fff;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  background-image: -webkit-linear-gradient(left, #cddc39, #e67e22 25%, #cddc39 50%, #e67e22 75%, #cddc39) !important;
-  -webkit-text-fill-color: transparent !important;
-  -webkit-background-clip: text !important;
-  background-size: 200% 100% !important;
-  animation: masked-animation 2s infinite linear !important;
 }
 .main-header .main-header-box .branding h2:hover {
   animation: masked-animation 1s infinite linear !important;
@@ -296,10 +331,14 @@ pre {
 }
 /* main-navigation */
 .main-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   text-align: center;
   background: #fff;
   border-top: 1px solid #ebebeb;
-  margin-bottom: 20px;
   border-bottom: 2px solid #e1e1e1;
 }
 .main-navigation .navbar-collapse {
@@ -326,9 +365,10 @@ pre {
 }
 .main-navigation .menu li a {
   color: #505050;
-  line-height: 4em;
+  line-height: 60px;
   display: block;
   padding: 0 21px;
+  font-size: 16px;
 }
 .main-navigation .menu li:hover > a {
   color: #e67e22;
@@ -516,6 +556,15 @@ pre {
 .post .post-footer .post-permalink {
   text-align: right;
 }
+.post .wechat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.post .wechat img {
+  width: 100%;
+}
 /*====================================================
   main post content
 ====================================================*/
@@ -640,7 +689,7 @@ pre {
 .post-content ul {
   margin: 0 0 24px 6px;
   padding-left: 16px;
-  list-style-type: square;
+  list-style-type: disc;
 }
 .post-content ol {
   margin: 0 0 24px 6px;
@@ -934,27 +983,27 @@ pre {
   border: 1px solid #e67e22;
   text-decoration: none;
 }
+.widget .social {
+  display: flex;
+  flex-wrap: wrap;
+}
 .widget .social a {
   display: inline-block;
   text-align: center;
-  width: 40px;
+  width: 50%;
   height: 40px;
-  line-height: 45px;
-  color: #fff;
-  background: #808080;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  text-decoration: none;
 }
 .widget .social a:hover {
-  background: #e67e22;
+  color: #222;
+  background: #fff3ec;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-}
-.widget .social a:last-child {
-  margin-right: 0px;
 }
 .widget .social a i {
   font-size: 20px;

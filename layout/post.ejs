@@ -23,8 +23,27 @@
         <% } %>
     </div>
     <%- partial('_partial/gallery',{post:page})%>
+
+    <!-- google广告 -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-1437849089810081"
+        data-ad-slot="9946365914"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script> -->
+    
     <div class="post-body post-content">
         <%- page.content %>
+    </div>
+    <div class="wechat">
+        <% if(theme.wechat.enable){ %>
+            <strong> <%- theme.wechat.title %> </strong>
+            <img class="wechat-image" src="<%- theme.wechat.img %>" />
+        <% } %>
     </div>
     <% if(theme.reward.alipay || theme.reward.wepay){ %>
     <%- partial('_partial/reward') %>
@@ -61,8 +80,34 @@
     </a>
     <% } %>
 </div>
+
+<!-- google广告 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1437849089810081"
+     data-ad-slot="9946365914"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <% if(page.comments){ %>
-<div id="comments">
-    <%- partial('_vendor/comments/index', {page: page}) %>
-</div>
+    <div id="comments">
+        <%- partial('_vendor/comments/index', {page: page}) %>
+    </div>
 <% } %>
+
+<!-- google广告 -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1437849089810081"
+     data-ad-slot="9946365914"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+

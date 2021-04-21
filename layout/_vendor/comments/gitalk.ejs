@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.css">
-<script src="//cdn.bootcss.com/gitalk/1.4.1/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.7.2/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.7.2/gitalk.min.js"></script>
 <script src="//cdn.bootcss.com/blueimp-md5/2.9.0/js/md5.min.js"></script>
 <div id="gitalk-container"></div>
 <script type="text/javascript">
@@ -12,7 +12,8 @@ var gitalk = new Gitalk({
     owner: "<%= theme.gitalk.owner%>",
     admin: ["<%= theme.gitalk.admin%>"],
     id: md5(location.pathname),
-    distractionFreeMode: <%= theme.gitalk.distractionFreeMode%>
+    distractionFreeMode: <%= theme.gitalk.distractionFreeMode%>,
+    proxy: "<%= theme.gitalk.proxy %>"
 });
 gitalk.render('gitalk-container');
 </script>

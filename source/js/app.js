@@ -88,7 +88,7 @@ window.onload = function() {
                 $toc.style = "";
             } else {
                 $toc.style.position = "fixed";
-                $toc.style.top = "5px";
+                $toc.style.top = "60px";
                 $toc.style.left = left + "px";
                 $toc.style.width = width + "px"
             }

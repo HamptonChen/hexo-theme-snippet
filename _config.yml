@@ -8,29 +8,36 @@ menu:
 - page: home
   url: /
   icon:
-- page: 前端
-  url: /categories/前端/
-  icon:
-- page: 后端
-  url: /categories/后端/
-  icon:
-- page: 工具
-  url: /categories/工具/
-  icon:
-- page: 时间轴
+- page: 文章列表
   url: /archives/
+  icon:
+- page: 文章分类
+  url: /categories/
+  icon:
+- page: 文章标签
+  url: /tags/
+  icon:
+- page: 关于作者
+  url: /about/
   icon:
 
 ## favicon
-favicon: /favicon.ico
+favicon: /img/site_logo.jpg
 
 ## Feed
 rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: './img/head-img.jpg'
-  url: 'https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2'
+  img: 
+  url: 'javascript:'
+
+## swipeBanner
+swipeBanner:
+# - img: https://image.chenhanpeng.com/static/images/web_static_image/head-img.jpg
+#   url: /
+- img: https://image.chenhanpeng.com/static/images/web_static_image/head-img-1.jpg
+  url: /categories/前端
 
 # 各个小工具的设置
 
@@ -38,6 +45,7 @@ carousel:
 widgets:
   - search
   - notification
+  # - promo
   - social
   - category
   - archive
@@ -53,34 +61,45 @@ jsonContent:
     title: true
     text: true
     content: true
-    categories: false
-    tags: false
+    categories: true
+    tags: true
 
 ## 网站公告设置
+# https://image.chenhanpeng.com/static/images/web_static_image/notification-gzh.png
 notification: |-
-            <p>
-                主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-                主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-                支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+            <p style="text-align:center;">
+                <img src="https://image.chenhanpeng.com/fegeek_qrcode.png" style="width:360px;" />
             </p>
+
+## 推广/广告位
+promo:
+      <p>
+        <a href="/" target="_blank"> <img src="/" alt></a> <br />
+      </p>
 
 ## 社交设置
 social:
  - name: Github
-   icon: git
-   href: //github.com/shenliyang
+   icon: github
+   href: https://github.com/Hanpeng-Chen
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
- - name: 联系QQ
-   icon: qq
-   href: /
- - name: 微信
-   icon: weixin
-   href: /
- - name: QQ群
-   icon: users
-   href: /
+   href: mailto:hanpengchen07@163.com
+ - name: 掘金
+   icon: magic
+   href: https://juejin.cn/user/1063982988795911
+ - name: 知乎
+   icon: magic
+   href: https://www.zhihu.com/people/hanpengchen
+#  - name: 联系QQ
+#    icon: qq
+#    href: /
+#  - name: 微信
+#    icon: weixin
+#    href: /
+#  - name: QQ群
+#    icon: users
+#    href: /
  - name: RSS
    icon: feed
    href: /atom.xml
@@ -99,7 +118,7 @@ arch_config:
 
 ## 标签云设置
 tagcloud:
-  tag3d: false
+  tag3d: true
   textColour: '#444'
   outlineMethod: 'block'
   outlineColour: '#FFDAB9'
@@ -111,17 +130,16 @@ tagcloud:
 
 ## 友链设置
 links:
-  - Hexo官网: https://hexo.io/zh-cn/
-
+  # - Hexo官网: https://hexo.io/zh-cn/
 
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding:
+branding: Hanpeng Chen的个人博客
 
 ## 设置banner背景图片
 banner:
-    img: http://snippet.shenliyang.com/img/banner.jpg
+    img: https://image.chenhanpeng.com/static/images/web_static_image/banner.jpg
 
 ## 首页列表底部面板
 homePanel: true
@@ -129,6 +147,9 @@ homePanel: true
 ## 缩略图自定义随机图片
 defaultImgs:
   -
+
+## 是否显示首页的缩略图
+showImgs: false
 
 ## 截取文章首页描述字数
 excerptLength: 120
@@ -155,24 +176,30 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">代码视界</a>
 
 ## 文章打赏
 reward:
-  alipay: ''
-  wepay: ''
+  alipay: https://image.chenhanpeng.com/static/images/web_static_image/donate/alipay_qrcode.png
+  wepay: https://image.chenhanpeng.com/static/images/web_static_image/donate/weixin_pay_qrcode.png
   tip: 赞赏是不耍流氓的鼓励
+
+## 微信公众号
+wechat:
+  enable: true
+  title: 欢迎关注微信公众号： 『前端极客技术』『代码视界』
+  img: https://image.chenhanpeng.com/static/images/web_static_image/article-gzh-qrcode.png
 
 ## 主题评论
 
 ## Valine评论
 valine:
-   enable: true
-   appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
-   appKey: erIpQac4azoCmgfBB7Dl9maa
-   placeholder: 说点什么吧
+   enable: false
+   appId:
+   appKey:
+   placeholder:
    notify: false
-   verify: true
+   verify: false
    avatar: mm
    meta: nick,mail
    pageSize: 10
@@ -186,18 +213,20 @@ changyan:
 ### 来必力
 livere:
   enable: false
-  livere_uid: MTAyMC8zMzA1MS85NjEz
+  livere_uid: 
 
 ## Gitalk评论
 gitalk:
-   enable: false
-   clientID:
-   clientSecret:
-   repo:
-   owner:
-   admin:
-   perPage:
+   enable: true
+   clientID: fb80658382dee5240195
+   clientSecret: 66663a08264192222ba993f20dd7c0a27c1e6fa5
+   repo: blog-comments
+   owner: Hanpeng-Chen
+   admin: ['Hanpeng-Chen']
+   perPage: 10
    distractionFreeMode: true
+   language: zh-CN
+   proxy: https://bold-forest-51f4.hanpengchen.workers.dev/?https://github.com/login/oauth/access_token
 
 ### Disqus评论
 disqus:
@@ -217,36 +246,59 @@ gitment:
 ### 友言评论(服务不稳定)
 uyan:
   enable: false
-  uyan_id: 1966422
+  uyan_id:
 
 
 ## 网站访客统计
 visit_counter:
    site: false
-   page: false
+   page: true
+
+leancloud_visitors:
+  enable: false
+  app_id: #<app_id>
+  app_key: #<app_key>
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+  security: false
+  betterPerformance: false
 
 ## 网站访问统计分析
 
 ### 网盟CNZZ统计
-cnzz_analytics: 1263868967
+cnzz_analytics:
 
 ### 百度统计
-baidu_analytics:
+baidu_analytics: 494af80fa01e8939bec179cfddf660d5
 
 ### 谷歌统计
-google_analytics:
+google_analytics: UA-142577364-1
 
 ### 腾讯分析
 tencent_analytics:
 
 ### 百度站点认证
-baidu_site_verification:
+baidu_site_verification: rGeweWgWoh
 
 ### 百度自动推送
-baidu_push: false
+baidu_push: true
+
+##备案信息
+### ICP备案
+icp:
+  enable: true
+  id: 闽ICP备19010134号-1
+  url: //beian.miit.gov.cn/
+
+### 公安备案
+gongan_beian:
+  enable: true
+  icon: https://image.chenhanpeng.com/static/images/web_static_image/beian_icon.png
+  id: 闽公网安备 35020302033449号
+  url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020302033449
 
 #网站主题配置
-since: 2017
-beian: 
+since: 2019
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
 version: 1.2.3

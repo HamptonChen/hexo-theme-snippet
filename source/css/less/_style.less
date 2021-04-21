@@ -237,6 +237,37 @@ pre {
     }
 }
 
+.swipe-box {
+    position: relative;
+    margin-bottom: 20px;
+    
+    .swipe-pre-icon {
+        width: 3em;
+        height: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-2em);
+        background-color: rgba(48, 49, 51, 0.7);
+    }
+    
+    .swipe-next-icon {
+        width: 3em;
+        height: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-2em);
+        background-color: rgba(48, 49, 51, 0.7);
+    }
+}
+
 /*====================================================
     header
 ====================================================*/
@@ -246,9 +277,11 @@ pre {
     line-height: 0;
     height: 180px;
     width: 100%;
-    background: @white_color url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
+    background:@white_color;
     background-repeat: repeat;
     overflow: hidden;
+    margin-top: 60px;
+    margin-bottom: 20px;
 
     .banneriframe {
         width: 100%;
@@ -274,6 +307,18 @@ pre {
             }
         }
 
+        a.header-title {
+            text-decoration: none;
+        }
+
+        .header-title h1 {
+            font-family: @font_family_5;
+            color: @white_color;
+            text-decoration: none;
+            font-size: 3em;
+            letter-spacing: 20px;
+        }
+
         .branding {
             padding-top: 15px;
 
@@ -282,13 +327,13 @@ pre {
                 width: 320px;
                 margin: 0 auto;
                 letter-spacing: 3px;
-                color: @theme_color;
+                color: @white_color;
                 .text-ellipsis();
-                background-image: -webkit-linear-gradient(left, #cddc39, #e67e22 25%, #cddc39 50%, #e67e22 75%, #cddc39) !important;
-                -webkit-text-fill-color: transparent !important;
-                -webkit-background-clip: text !important;
-                background-size: 200% 100% !important;
-                animation: masked-animation 2s infinite linear !important;
+                // background-image: -webkit-linear-gradient(left, #cddc39, #e67e22 25%, #cddc39 50%, #e67e22 75%, #cddc39) !important;
+                // -webkit-text-fill-color: transparent !important;
+                // -webkit-background-clip: text !important;
+                // background-size: 200% 100% !important;
+                // animation: masked-animation 2s infinite linear !important;
 
                 &:hover {
                     animation: masked-animation 1s infinite linear !important;
@@ -312,10 +357,14 @@ pre {
 
 /* main-navigation */
 .main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     text-align: center;
     background: @white_color;
     .border-top(#ebebeb);
-    margin-bottom: 20px;
     border-bottom: 2px solid #e1e1e1;
 
     .navbar-collapse {
@@ -342,9 +391,10 @@ pre {
 
             a {
                 color: @grey5_color;
-                line-height: 4em;
+                line-height: 60px;
                 display: block;
                 padding: 0 21px;
+                font-size: 16px;
             }
 
             &:hover {
@@ -585,6 +635,15 @@ pre {
             text-align: right;
         }
     }
+    .wechat {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100%;
+        }
+    }
 }
 
 /*====================================================
@@ -734,7 +793,7 @@ pre {
     ul {
         margin: 0 0 24px 6px;
         padding-left: 16px;
-        list-style-type: square;
+        list-style-type: disc;
     }
 
     ol {
@@ -1078,26 +1137,27 @@ pre {
             }
         }
     }
+    .social {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     .social a {
         display: inline-block;
         text-align: center;
-        width: 40px;
+        width: 50%;
         height: 40px;
-        line-height: 45px;
-        color: @white_color;
-        background: @grey8_color;
-        .border-radius(3px);
-        margin-right: 10px;
-        margin-bottom: 10px;
+        line-height: 40px;
+        font-size: 16px;
+        color: @link-color;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        text-decoration: none;
 
         &:hover {
-            background: @theme_color;
+            color: @link-hover-color;
+            background: @theme-hover-bg-color;
             .transition;
-        }
-
-        &:last-child {
-            margin-right: 0px;
         }
 
         i {

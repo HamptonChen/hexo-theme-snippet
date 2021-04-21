@@ -12,7 +12,7 @@
 </ol>
 <% page.posts.each(function(post){ %>
 <article class="post">
-    <% if(post.img) { %>
+    <% if(post.img && theme.showImgs) { %>
     <div class="post-media">
         <a href="<%- url_for(post.path) %>">
             <img class="img-ajax" src="<%- url_for('/img/loading.gif') %>" data-src="<%- url_for(post.img) %>" alt="<%- post.title %>">
