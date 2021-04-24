@@ -226,7 +226,7 @@ gitalk:
    perPage: 10
    distractionFreeMode: true
    language: zh-CN
-   proxy: https://bold-forest-51f4.hanpengchen.workers.dev/?https://github.com/login/oauth/access_token
+   proxy: https://cloudflare-cors-anywhere.hanpengchen.workers.dev/?https://github.com/login/oauth/access_token
 
 ### Disqus评论
 disqus:
