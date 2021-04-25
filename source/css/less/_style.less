@@ -595,6 +595,17 @@ pre {
                 max-width: 100%;
             }
         }
+        .category-list-count {
+            margin-left: 4px;
+
+            &:before {
+                content: "(";
+            }
+
+            &:after {
+                content: ")";
+            }
+        }
     }
 
     .post-footer {
@@ -1064,6 +1075,10 @@ pre {
                 &.archive-list-item {
                     width: 50%;
                     display: inline-block;
+                }
+
+                ul {
+                    margin-left: 1.5em;
                 }
             }
         }

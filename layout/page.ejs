@@ -16,13 +16,12 @@
         <h1 class="post-head">共计
             <%- site.categories.length%>个分类</h1>
         <div class="post-body">
-            <% site.categories.forEach(function (item) {%>
-            <li class="post-items">
-                <a href="/<%- item.path%>" title="<%- item.name%>" target="_blank">
-                    <%- item.name%>
-                </a>
-            </li>
-            <%})%>
+            <%- list_categories({
+                showcount: theme.cate_config.show_count,
+                transform: function(name){
+                    return '<i class="fa" aria-hidden="true">'+name+'</i>';
+                }
+            }) %>
         </div>
     </article>
     <% } else{ %>
