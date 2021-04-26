@@ -235,30 +235,70 @@ pre {
 .swipe-box {
   position: relative;
   margin-bottom: 20px;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  background-color: #FFF;
 }
-.swipe-box .swipe-pre-icon {
-  width: 3em;
-  height: 4em;
+.swipe-box a {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 1s, opacity 1s ease-in-out;
+}
+.swipe-box a img {
+  height: inherit;
+  object-fit: cover;
+}
+.swipe-box a.active {
+  opacity: 1;
+  visibility: visible;
+}
+.swipe-box #swipePagination {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+.swipe-box #swipePagination div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  line-height: 10px;
+  background: #959595;
+  margin: 0 5px;
+}
+.swipe-box #swipePagination div.active {
+  background: #e67e22;
+}
+.swipe-box .swipe-btn-pre {
   position: absolute;
+  top: 50%;
   left: 0;
-  top: 50%;
-  transform: translateY(-2em);
-  background-color: rgba(48, 49, 51, 0.7);
+  width: 41px;
+  height: 69px;
+  margin-top: -35px;
+  z-index: 10;
+  background: url("../../img/icon-slides.png") no-repeat -84px 50%;
 }
-.swipe-box .swipe-next-icon {
-  width: 3em;
-  height: 4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.swipe-box .swipe-btn-pre:hover {
+  background-position: 0 50%;
+}
+.swipe-box .swipe-btn-next {
   position: absolute;
-  right: 0;
   top: 50%;
-  transform: translateY(-2em);
-  background-color: rgba(48, 49, 51, 0.7);
+  right: 0;
+  width: 41px;
+  height: 69px;
+  margin-top: -35px;
+  z-index: 10;
+  background: url("../../img/icon-slides.png") no-repeat -125px 50%;
+}
+.swipe-box .swipe-btn-next:hover {
+  background-position: -42px 50%;
 }
 /*====================================================
     header

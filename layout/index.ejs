@@ -7,42 +7,86 @@
 <% } %>
 
 <% if (theme.swipeBanner && theme.swipeBanner.length) { %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.5/lib/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vant@2.5/lib/vant.min.js"></script>
     <div class="swipe-box" id="swipeBanner">
-        <van-swipe :autoplay="3000" ref="vanSwipe">
-            
         <%  theme.swipeBanner.forEach(function (item) { %>
-            <div class="carousel">
-                
-            </div>
-            <van-swipe-item>
-                <a href="<%- item.url%>" target="_blank">
-                    <img src="<%- url_for(item.img) %>" alt="" width="100%">
-                </a>
-            </van-swipe-item>
+        <a href="<%- item.url%>" target="_blank">
+            <img src="<%- url_for(item.img) %>" alt="" width="100%">
+        </a>
         <%   }) %>
-        </van-swipe>
-    <% if (theme.swipeBanner.length > 1) { %>    
-        <div class="swipe-pre-icon" @click.stop="$refs.vanSwipe.prev()">
-            <van-icon name="arrow-left" color="#FFF" size="2em"></van-icon>
+    <% if (theme.swipeBanner.length > 1) { %>
+        <div id="swipePagination">
+            <%  theme.swipeBanner.forEach(function (item) { %>
+            <div></div>
+            <%   }) %>
         </div>
-        <div class="swipe-next-icon" @click.stop="$refs.vanSwipe.next()">
-            <van-icon name="arrow" color="#FFF" size="2em"></van-icon>
-        </div>
+        <div id="swipeBtnPre" class="swipe-btn-pre"></div>
+        <div id="swipeBtnNext" class="swipe-btn-next"></div>
     <% } %>
     </div>
-    <script>
-        var app = new Vue({
-            el: '#swipeBanner',
-            data() {
-                return {}
-            },
-            methods: {},
-            created() {},
-        })
+    <% if (theme.swipeBanner.length == 1) { %>
+    <script type="text/javascript">
+        var swipeBanner = document.getElementById("swipeBanner");
+        var swipeItems = swipeBanner.getElementsByTagName("a");
+        swipeBanner.style.height = swipeBanner.getBoundingClientRect().width / 4 + 'px';
+        window.onresize = function() {
+            swipeBanner.style.height = swipeBanner.getBoundingClientRect().width / 4 + 'px';
+        }
+        swipeItems[0].className = "active";
     </script>
+    <% } %>
+    <% if (theme.swipeBanner.length > 1) { %>
+    <script type="text/javascript">
+        function initSwipe() {
+            var swipeBanner = document.getElementById("swipeBanner");
+            var swipeItems = swipeBanner.getElementsByTagName("a");
+            swipeBanner.style.height = swipeBanner.getBoundingClientRect().width / 4 + 'px';
+            window.onresize = function() {
+                swipeBanner.style.height = swipeBanner.getBoundingClientRect().width / 4 + 'px';
+            }
+
+            var swipePagination = document.getElementById("swipePagination");
+            var paginationItem = swipePagination.getElementsByTagName("div")
+            var swipeBtnPre = document.getElementById("swipeBtnPre");
+            var swipeBtnNext = document.getElementById("swipeBtnNext");
+
+            swipeBtnPre.addEventListener("click", clickSwipeBtnPre)
+            swipeBtnNext.addEventListener("click", swipeItemChange)
+
+            var current = 0;
+            swipeItems[0].className = "active";
+            paginationItem[0].className = "active";
+
+            function hideSwipeItem(){
+                swipeItems[current].className = "";
+                paginationItem[current].className = "";
+            }
+            function showSwipeItem() {
+                swipeItems[current].className = "active";
+                paginationItem[current].className = "active";
+            }
+            function swipeItemChange() {
+                hideSwipeItem();
+                current++;
+                if (current >= swipeItems.length ) current = 0;
+                showSwipeItem()
+            }
+            function clickSwipeBtnPre() {
+                hideSwipeItem();
+                current--;
+                if (current < 0 ) current = swipeItems.length - 1;
+                showSwipeItem()
+            }
+            var interval = setInterval(swipeItemChange, 5000);
+            swipeBanner.onmouseover = function(){
+                clearInterval(interval);
+            }
+            swipeBanner.onmouseout = function(){
+                interval = setInterval(swipeItemChange, 5000);
+            }
+        }
+        initSwipe();
+    </script>
+    <% } %>
 <% } %>
 
 <% if(page.posts && page.posts.length){ %>
