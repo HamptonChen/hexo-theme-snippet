@@ -38,6 +38,8 @@ swipeBanner:
 #   url: /
 - img: https://image.chenhanpeng.com/static/images/web_static_image/head-img-1.jpg
   url: /categories/前端
+- img: https://image.chenhanpeng.com/static/images/web_static_image/aliyun_promo.jpg
+  url: https://www.aliyun.com/activity/daily/bestoffer?userCode=iatqq4td
 
 # 各个小工具的设置
 
