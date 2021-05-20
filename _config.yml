@@ -17,6 +17,9 @@ menu:
 - page: 文章标签
   url: /tags/
   icon:
+- page: 友链
+  url: /links/
+  icon:
 - page: 关于作者
   url: /about/
   icon:
@@ -132,7 +135,18 @@ tagcloud:
 
 ## 友链设置
 links:
-  # - Hexo官网: https://hexo.io/zh-cn/
+  - title: 纯洁的微笑
+    url: http://www.ityouknow.com/
+    description: neo 的个人博客，分享技术，分享生活
+  - title: 薛定喵君
+    url: http://xuedingmiao.com/
+    description: 前端技术分享博客
+  - title: 程序员一站式导航
+    url: http://tooool.org/
+    description: 专注于程序员的导航网址，一站式工作平台
+  - title: 原创博客技术联盟
+    url: http://techblog.pub/
+    description: 原创技术博客作者交流的地方
 
 # 主题自定义个性化配置
 

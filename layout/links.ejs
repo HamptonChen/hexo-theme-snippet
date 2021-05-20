@@ -1,0 +1,23 @@
+<% if (theme.links && theme.links.length){ %>
+  <article class="post">
+    <h1 class="post-head">友情链接</h1>
+    <div class="post-body">
+      <ul>
+        <% theme.links.forEach(function (item) {%>
+        <li style="font-size: 16px;">
+          <a href="<%- item.url %>" class="fa" target="_blank">
+            <%= item.title%>
+          </a>
+          - <%= item.description%>
+        </li>
+      <%});%>
+      </ul>
+    </div>
+</article>
+<% } %>
+
+<% if(page.comments){ %>
+  <div id="comments">
+      <%- partial('_vendor/comments/index', {page: page}) %>
+  </div>
+<% } %>
